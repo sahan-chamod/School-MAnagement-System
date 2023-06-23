@@ -1,0 +1,12 @@
+
+<button (click)="ShowStudentsWithBalance()">Show Balance</button>
+<button (click)="showAll()">Show All Students</button>
+<button (click)="ShowStudentsWoBalance()">Show W/O Balance</button>
+<div class="container">
+    <div class="content" *ngFor=" let student of students| balance:checked">
+        <img src={{student.image}} alt="">
+        <p>{{student.name}}</p>
+        <p [ngStyle]="{color:student.balance>0?'red':'green'}">Balance:{{student.balance}}</p>
+        <button (click)="OnUpdate(student.registrationNo)" >Update</button>
+    </div>
+</div>

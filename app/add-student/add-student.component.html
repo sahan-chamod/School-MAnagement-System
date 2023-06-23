@@ -1,0 +1,27 @@
+
+
+<div class="container">
+    <div class="content">
+        <div class="left">
+            <img src="https://imgs.search.brave.com/kCdMX4Mzb59UG9j9G80gE-ywwSckXtSPcJAetTjzidg/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly93d3cu/Y3dkcml2ZXIuY29t/L2FwcC91cGxvYWRz/LzIwMTYvMDcvNjY3/LTEuanBn" alt="">
+        </div>
+        <form [formGroup]="form" (ngSubmit)="SubmitData()">
+        <div class="right">
+            <h1> {{show? 'Update':'Add'}}  Student</h1>
+            <label> Name</label>
+            <input type="text" formControlName="name">
+            
+            <label>Registration</label>
+            <input  type="text" formControlName="registrationNo"/>
+
+            <label>Image</label>
+            <input type="text" formControlName="image" />
+
+            <label *ngIf="show">Balance</label>
+            <input  *ngIf="show" type="text" formControlName="balance" />
+
+            <button type="submit" >{{show? 'Update Student':'Add Student'}}</button>
+        </div>
+    </form>
+    </div>
+</div>
